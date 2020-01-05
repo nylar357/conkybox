@@ -1,0 +1,68 @@
+#------------------------- Windows Settings
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type normal
+own_window_transparent no
+own_window_hints undecorated,sticky,below,skip_taskbar,skip_pager
+own_window_colour black
+own_window_class Conky
+own_window_title Simple Default Conky
+own_window_argb_visual yes
+own_window_argb_value 0
+double_buffer yes
+
+#------------------------- Location
+alignment top_left
+minimum_size 313 140
+maximum_width 313
+gap_x 646
+gap_y 0
+
+#------------------------- FONT
+use_xft yes
+xftfont Monofur:bold:size=8
+xftalpha 0.8 	# Alpha of Xft font. Must be a value at or between 1 and 0 ###
+override_utf8_locale yes
+draw_shades yes
+default_shade_color black
+draw_outline no
+uppercase no
+
+#------------------------- Colors
+default_color E3A51A 		#220 220 220	Gainsboro
+color0 E3A51A			#Special Color
+color1 E3A51A			#Shades of grey
+color2 E3A51A
+color3 E3A51A
+
+
+
+
+#------------------------- BORDERS
+draw_borders no
+draw_outline no
+stippled_borders 0
+border_inner_margin 0
+border_outer_margin 0
+border_width 0
+
+draw_graph_borders no
+
+#------------------------- OTHER
+text_buffer_size 256
+use_spacer none
+background no
+use_spacer none
+update_interval 3
+
+
+TEXT
+${voffset 12}${GOTO 50}${font}Ram
+${GOTO 50}${font}Usage: ${font Monofur:size=8}${memperc}%  (${mem})${GOTO 220}${font}Total: ${font Monofur:size=8}${memmax}
+${GOTO 50}${memgraph 25,245 111111 AAAAAA}
+${GOTO 50}${font Monofur:size=8}${color0}${top_mem name 1}${GOTO 200}${top_mem mem 1}%${GOTO 255}${top_mem mem_vsize 1}
+${GOTO 50}${font Monofur:size=8}${color1}${top_mem name 2}${GOTO 200}${top_mem mem 2}%${GOTO 255}${top_mem mem_vsize 2}
+${GOTO 50}${font Monofur:size=8}${color2}${top_mem name 3}${GOTO 200}${top_mem mem 3}%${GOTO 255}${top_mem mem_vsize 3}
+${GOTO 50}${font Monofur:size=8}${color3}${top_mem name 4}${GOTO 200}${top_mem mem 4}%${GOTO 255}${top_mem mem_vsize 4}
+
+${image /home/nylar/Downloads/myicongray.png -p 0,5 -s 45x45}

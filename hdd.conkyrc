@@ -1,0 +1,66 @@
+#------------------------- Windows Settings
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type normal
+own_window_transparent no
+own_window_hints undecorated,sticky,below,skip_taskbar,skip_pager
+own_window_colour black
+own_window_class Conky
+own_window_title Simple Default Conky
+own_window_argb_visual yes
+own_window_argb_value 0
+double_buffer yes
+
+#------------------------- Location
+alignment top_left
+minimum_size 313 140
+maximum_width 313
+gap_x 979
+gap_y 0
+
+#------------------------- FONT
+use_xft yes
+xftfont Monofur:bold:size=8
+xftalpha 0.8 	# Alpha of Xft font. Must be a value at or between 1 and 0 ###
+override_utf8_locale yes
+draw_shades yes
+default_shade_color black
+draw_outline no
+uppercase no
+
+#------------------------- Colors
+default_color E3A51A 		#220 220 220	Gainsboro
+color0 E3A51A			#Special Color
+color1 E3A51A			#Shades of grey
+color2 E3A51A
+color3 E3A51A
+
+
+#------------------------- BORDERS
+draw_borders no
+draw_outline no
+stippled_borders 0
+border_inner_margin 0
+border_outer_margin 0
+border_width 0
+
+draw_graph_borders no
+
+#------------------------- OTHER
+text_buffer_size 256
+use_spacer none
+background no
+use_spacer none
+update_interval 3
+
+
+TEXT
+${voffset 12}${GOTO 50}${font}File System
+${GOTO 50}${font}Home: ${GOTO 178}${font}Swap:
+${GOTO 50}${diskiograph /dev/sda1 25,120 111111 AAAAAA}   ${diskiograph /dev/sda5 25,120 111111 AAAAAA}
+${GOTO 50}${color3}${fs_bar 5,120 /}   ${fs_bar 5,120 /dev/sda5}${color}
+
+${GOTO 50}${font}${color2}Usage: ${font Monofur:size=8}${fs_used_perc /}% (${fs_used /})${GOTO 180}${font}Usage: ${font Monofur:size=8}${fs_used_perc /dev/sda5}% (${fs_used /dev/sda5})
+${GOTO 50}${font}${color3}Free: ${font Monofur:size=8}${fs_free /} ${GOTO 180}${font}Free: ${font Monofur:size=8}${fs_free /dev/sda5}
+
+${image /home/nylar/Downloads/myicongray.png -p 0,5 -s 45x45}
