@@ -3,4 +3,4 @@ Adapted from Wesley Brewers Minty Conky Bar
 
 
 
-![preview](img/conkybox2.png)
+![preview](img/conkybox3.png)
